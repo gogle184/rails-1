@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Task</title>
+    <title>スケジュール管理</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= yield %>
+     <header>
+       <h1>スケジュール管理</h1>
+     </header>
+     <%= yield %>
+     <footer>
+      <p class="FooterBody_count">
+      予定合計&nbsp;&nbsp;
+      <span><%=Post.count%></span>
+      件
+      </p>
+      <p class="FotterBody_datetime">
+      本日の日付&nbsp;
+      <%= Date.current.strftime("%Y/%m/%d") %></p>
+     </footer>
   </body>
 </html>
