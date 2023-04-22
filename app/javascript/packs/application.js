@@ -11,3 +11,9 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require('popper.js')
+require('bootstrap')
+require('@rails/ujs').start()
+require('data-confirm-modal')
+// other require statements

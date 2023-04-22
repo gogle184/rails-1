@@ -1,0 +1,34 @@
+<h3>予定詳細</h3>
+ 
+ <table>
+   <tr>
+     <th>タイトル</th>
+     
+     <td><%= @post.title %></td>
+   </tr>
+   <tr>
+     <th>開始日</th>
+     <td><%= @post.startday %></td>
+   </tr>
+   <tr>
+     <th>終了日</th>
+     <td><%= @post.finishday %></td>
+   </tr>
+   <tr>
+     <th>終日</th>
+     <td><% if @post.wholeday == true %>
+         ○
+         <% else @post.wholeday == false %><%end%></td>
+   </tr>
+   <tr>
+     <th>コメント</th>
+     <td><%= @post.memo%></td>
+   </tr>
+ </table>
+ 
+ <div>
+   <ul>
+     <li><%= link_to "予定を編集する", [:edit,@post]%></li>
+     <li><%= link_to "予定一覧に戻る", :posts %></li>
+   </ul>
+ </div>
